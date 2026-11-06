@@ -1,0 +1,693 @@
+workload,param,base,dtype,steps,bound,max_len,max_correct_len,first_inexact,first_failure,failure_status,len_at_failure,first_rounding_pass,first_rounding_note
+BB(4),0,4,float32,107,11,14,11,90,90,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+BB(4),0,4,float64,107,25,14,14,,,,,,
+counter,2,8,float32,18,7,3,3,,,,,,
+counter,2,8,float64,18,16,3,3,,,,,,
+counter,4,8,float32,26,7,5,5,,,,,,
+counter,4,8,float64,26,16,5,5,,,,,,
+counter,6,8,float32,34,7,7,7,13,,,,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+counter,6,8,float64,34,16,7,7,,,,,,
+counter,8,8,float32,42,7,9,8,8,8,invalid,8,scale,scale: (1-1/beta) l if move R  [work neuron]
+counter,8,8,float64,42,16,9,9,,,,,,
+counter,10,8,float32,50,7,11,0,0,0,invalid,10,input,input: the start vector is already rounded (tape too long)
+counter,10,8,float64,50,16,11,11,,,,,,
+counter,12,8,float32,58,7,13,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+counter,12,8,float64,58,16,13,13,,,,,,
+counter,14,8,float32,66,7,15,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+counter,14,8,float64,66,16,15,15,,,,,,
+counter,16,8,float32,74,7,17,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+counter,16,8,float64,74,16,17,17,32,52,invalid,17,left,left: (1-1/beta) r if move L  [work neuron]
+counter,18,8,float32,82,7,19,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+counter,18,8,float64,82,16,19,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+counter,20,8,float32,90,7,21,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+counter,20,8,float64,90,16,21,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+counter,22,8,float32,98,7,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+counter,22,8,float64,98,16,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+counter,24,8,float32,106,7,25,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+counter,24,8,float64,106,16,25,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+counter,26,8,float32,114,7,27,0,0,0,invalid,26,input,input: the start vector is already rounded (tape too long)
+counter,26,8,float64,114,16,27,0,0,0,invalid,26,input,input: the start vector is already rounded (tape too long)
+counter,28,8,float32,122,7,29,0,0,0,invalid,28,input,input: the start vector is already rounded (tape too long)
+counter,28,8,float64,122,16,29,0,0,0,invalid,28,input,input: the start vector is already rounded (tape too long)
+counter,30,8,float32,130,7,31,0,0,0,invalid,30,input,input: the start vector is already rounded (tape too long)
+counter,30,8,float64,130,16,31,0,0,0,invalid,30,input,input: the start vector is already rounded (tape too long)
+adder,2,8,float32,40,7,6,6,,,,,,
+adder,2,8,float64,40,16,6,6,,,,,,
+adder,4,8,float32,40,7,7,7,,,,,,
+adder,4,8,float64,40,16,7,7,,,,,,
+adder,6,8,float32,42,7,9,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+adder,6,8,float64,42,16,9,9,,,,,,
+adder,8,8,float32,50,7,11,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+adder,8,8,float64,50,16,11,11,,,,,,
+adder,10,8,float32,60,7,13,0,0,0,wrong,13,input,input: the start vector is already rounded (tape too long)
+adder,10,8,float64,60,16,13,13,,,,,,
+adder,12,8,float32,56,7,15,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+adder,12,8,float64,56,16,15,15,,,,,,
+adder,14,8,float32,50,7,17,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+adder,14,8,float64,50,16,17,17,17,17,invalid,17,scale,scale: (1-1/beta) l if move R  [work neuron]
+adder,16,8,float32,66,7,19,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+adder,16,8,float64,66,16,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+adder,18,8,float32,64,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+adder,18,8,float64,64,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+adder,20,8,float32,62,7,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+adder,20,8,float64,62,16,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+adder,22,8,float32,60,7,25,0,0,0,wrong,25,input,input: the start vector is already rounded (tape too long)
+adder,22,8,float64,60,16,25,0,0,0,invalid,25,input,input: the start vector is already rounded (tape too long)
+adder,24,8,float32,70,7,27,0,0,0,wrong,27,input,input: the start vector is already rounded (tape too long)
+adder,24,8,float64,70,16,27,0,0,0,invalid,27,input,input: the start vector is already rounded (tape too long)
+adder,26,8,float32,62,7,29,0,0,0,invalid,29,input,input: the start vector is already rounded (tape too long)
+adder,26,8,float64,62,16,29,0,0,0,invalid,29,input,input: the start vector is already rounded (tape too long)
+adder,28,8,float32,64,7,31,0,0,0,invalid,31,input,input: the start vector is already rounded (tape too long)
+adder,28,8,float64,64,16,31,0,0,0,invalid,31,input,input: the start vector is already rounded (tape too long)
+adder,30,8,float32,70,7,33,0,0,0,wrong,33,input,input: the start vector is already rounded (tape too long)
+adder,30,8,float64,70,16,33,0,0,0,invalid,33,input,input: the start vector is already rounded (tape too long)
+palindrome,2,8,float32,6,7,2,2,,,,,,
+palindrome,2,8,float64,6,16,2,2,,,,,,
+palindrome,4,8,float32,15,7,4,4,,,,,,
+palindrome,4,8,float64,15,16,4,4,,,,,,
+palindrome,6,8,float32,28,7,6,6,,,,,,
+palindrome,6,8,float64,28,16,6,6,,,,,,
+palindrome,8,8,float32,45,7,8,8,8,,,,scale,scale: (1-1/beta) l if move R  [work neuron]
+palindrome,8,8,float64,45,16,8,8,,,,,,
+palindrome,10,8,float32,66,7,10,0,0,0,invalid,10,input,input: the start vector is already rounded (tape too long)
+palindrome,10,8,float64,66,16,10,10,,,,,,
+palindrome,12,8,float32,91,7,12,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+palindrome,12,8,float64,91,16,12,12,,,,,,
+palindrome,14,8,float32,120,7,14,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+palindrome,14,8,float64,120,16,14,14,,,,,,
+palindrome,16,8,float32,153,7,16,0,0,0,wrong,16,input,input: the start vector is already rounded (tape too long)
+palindrome,16,8,float64,153,16,16,16,,,,,,
+palindrome,18,8,float32,190,7,18,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+palindrome,18,8,float64,190,16,18,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+palindrome,20,8,float32,231,7,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+palindrome,20,8,float64,231,16,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+palindrome,22,8,float32,276,7,22,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+palindrome,22,8,float64,276,16,22,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+palindrome,24,8,float32,325,7,24,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+palindrome,24,8,float64,325,16,24,0,0,0,wrong,24,input,input: the start vector is already rounded (tape too long)
+palindrome,26,8,float32,378,7,26,0,0,0,wrong,26,input,input: the start vector is already rounded (tape too long)
+palindrome,26,8,float64,378,16,26,0,0,0,invalid,26,input,input: the start vector is already rounded (tape too long)
+palindrome,28,8,float32,435,7,28,0,0,0,invalid,28,input,input: the start vector is already rounded (tape too long)
+palindrome,28,8,float64,435,16,28,0,0,0,invalid,28,input,input: the start vector is already rounded (tape too long)
+palindrome,30,8,float32,496,7,30,0,0,0,invalid,30,input,input: the start vector is already rounded (tape too long)
+palindrome,30,8,float64,496,16,30,0,0,0,invalid,30,input,input: the start vector is already rounded (tape too long)
+random,0,4,float32,150,11,16,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,0,4,float64,150,25,16,16,,,,,,
+random,1,8,float32,150,7,8,8,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,1,8,float64,150,16,8,8,,,,,,
+random,2,8,float32,150,7,18,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,2,8,float64,150,16,18,17,1,1,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,3,4,float32,150,11,167,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+random,3,4,float64,150,25,167,26,10,10,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,4,4,float32,150,11,10,10,,,,,,
+random,4,4,float64,150,25,10,10,,,,,,
+random,5,8,float32,150,7,18,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,5,8,float64,150,16,18,17,1,1,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,6,4,float32,150,11,75,11,21,23,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,6,4,float64,150,25,75,26,51,53,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,7,8,float32,150,7,21,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,7,8,float64,150,16,21,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,8,8,float32,150,7,20,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,8,8,float64,150,16,20,18,1,1,wrong,19,table,"case 2 = (q0, a): hat, part 1  [register r]"
+random,9,4,float32,150,11,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,9,4,float64,150,25,21,21,,,,,,
+random,10,8,float32,150,7,147,7,11,11,invalid,8,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,10,8,float64,150,16,147,17,21,21,wrong,18,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,11,8,float32,150,7,11,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+random,11,8,float64,150,16,11,11,,,,,,
+random,12,4,float32,150,11,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,12,4,float64,150,25,21,21,,,,,,
+random,13,4,float32,150,11,0,0,,,,,,
+random,13,4,float64,150,25,0,0,,,,,,
+random,14,8,float32,150,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,14,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,15,4,float32,150,11,37,11,21,21,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,15,4,float64,150,25,37,26,94,94,invalid,26,left,left: (1-1/beta) r if move L  [work neuron]
+random,16,8,float32,150,7,50,7,23,23,invalid,8,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,16,8,float64,150,16,50,16,50,50,invalid,17,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,17,8,float32,150,7,100,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,17,8,float64,150,16,100,17,68,68,invalid,18,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,18,8,float32,150,7,21,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,18,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,19,8,float32,150,7,31,7,32,32,invalid,8,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,19,8,float64,150,16,31,16,77,77,invalid,17,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,20,8,float32,150,7,14,0,0,0,wrong,13,input,input: the start vector is already rounded (tape too long)
+random,20,8,float64,150,16,14,14,,,,,,
+random,21,4,float32,150,11,6,6,,,,,,
+random,21,4,float64,150,25,6,6,,,,,,
+random,22,8,float32,150,7,9,7,2,2,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,22,8,float64,150,16,9,9,,,,,,
+random,23,4,float32,150,11,15,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,23,4,float64,150,25,15,15,,,,,,
+random,24,8,float32,150,7,6,6,,,,,,
+random,24,8,float64,150,16,6,6,,,,,,
+random,25,8,float32,150,7,8,8,,,,,,
+random,25,8,float64,150,16,8,8,,,,,,
+random,26,4,float32,150,11,15,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,26,4,float64,150,25,15,15,,,,,,
+random,27,4,float32,150,11,79,11,16,16,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,27,4,float64,150,25,79,26,45,45,invalid,26,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,28,8,float32,150,7,1,1,,,,,,
+random,28,8,float64,150,16,1,1,,,,,,
+random,29,4,float32,150,11,0,0,,,,,,
+random,29,4,float64,150,25,0,0,,,,,,
+random,30,8,float32,150,7,22,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,30,8,float64,150,16,22,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,31,8,float32,150,7,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,31,8,float64,150,16,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,32,4,float32,150,11,162,12,1,1,invalid,13,table,"case 2 = (q0, a): hat, part 1  [register r]"
+random,32,4,float64,150,25,162,26,15,15,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,33,4,float32,150,11,3,3,,,,,,
+random,33,4,float64,150,25,3,3,,,,,,
+random,34,4,float32,150,11,15,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,34,4,float64,150,25,15,15,,,,,,
+random,35,4,float32,150,11,149,11,12,13,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,35,4,float64,150,25,149,26,27,28,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,36,8,float32,150,7,6,6,,,,,,
+random,36,8,float64,150,16,6,6,,,,,,
+random,37,8,float32,150,7,2,2,,,,,,
+random,37,8,float64,150,16,2,2,,,,,,
+random,38,4,float32,150,11,7,7,,,,,,
+random,38,4,float64,150,25,7,7,,,,,,
+random,39,8,float32,150,7,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,39,8,float64,150,16,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,40,8,float32,150,7,4,4,,,,,,
+random,40,8,float64,150,16,4,4,,,,,,
+random,41,4,float32,150,11,6,6,,,,,,
+random,41,4,float64,150,25,6,6,,,,,,
+random,42,4,float32,150,11,17,0,0,0,wrong,17,input,input: the start vector is already rounded (tape too long)
+random,42,4,float64,150,25,17,17,,,,,,
+random,43,8,float32,150,7,9,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,43,8,float64,150,16,9,9,,,,,,
+random,44,4,float32,150,11,13,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,44,4,float64,150,25,13,13,,,,,,
+random,45,8,float32,150,7,112,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,45,8,float64,150,16,112,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,46,8,float32,150,7,11,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+random,46,8,float64,150,16,11,11,,,,,,
+random,47,4,float32,150,11,21,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,47,4,float64,150,25,21,21,,,,,,
+random,48,8,float32,150,7,11,0,0,0,wrong,10,input,input: the start vector is already rounded (tape too long)
+random,48,8,float64,150,16,11,11,,,,,,
+random,49,4,float32,150,11,73,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,49,4,float64,150,25,73,26,9,9,invalid,26,left,left: (1-1/beta) r if move L  [work neuron]
+random,50,4,float32,150,11,51,12,2,2,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,50,4,float64,150,25,51,26,76,76,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,51,8,float32,150,7,91,7,11,11,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,51,8,float64,150,16,91,17,27,27,invalid,17,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,52,8,float32,150,7,15,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,52,8,float64,150,16,15,15,,,,,,
+random,53,8,float32,150,7,15,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,53,8,float64,150,16,15,15,,,,,,
+random,54,8,float32,150,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,54,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,55,8,float32,150,7,14,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,55,8,float64,150,16,14,14,,,,,,
+random,56,4,float32,150,11,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,56,4,float64,150,25,20,20,,,,,,
+random,57,4,float32,150,11,9,9,,,,,,
+random,57,4,float64,150,25,9,9,,,,,,
+random,58,4,float32,150,11,148,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,58,4,float64,150,25,148,26,28,29,invalid,27,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,59,4,float32,150,11,4,4,,,,,,
+random,59,4,float64,150,25,4,4,,,,,,
+random,60,8,float32,150,7,8,8,,,,,,
+random,60,8,float64,150,16,8,8,,,,,,
+random,61,4,float32,150,11,10,10,,,,,,
+random,61,4,float64,150,25,10,10,,,,,,
+random,62,8,float32,150,7,4,4,,,,,,
+random,62,8,float64,150,16,4,4,,,,,,
+random,63,4,float32,150,11,23,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,63,4,float64,150,25,23,23,,,,,,
+random,64,4,float32,150,11,1,1,,,,,,
+random,64,4,float64,150,25,1,1,,,,,,
+random,65,4,float32,150,11,17,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,65,4,float64,150,25,17,17,,,,,,
+random,66,4,float32,150,11,19,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,66,4,float64,150,25,19,19,,,,,,
+random,67,8,float32,150,7,11,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,67,8,float64,150,16,11,11,,,,,,
+random,68,8,float32,150,7,7,7,,,,,,
+random,68,8,float64,150,16,7,7,,,,,,
+random,69,8,float32,150,7,0,0,,,,,,
+random,69,8,float64,150,16,0,0,,,,,,
+random,70,4,float32,150,11,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,70,4,float64,150,25,23,23,,,,,,
+random,71,4,float32,150,11,16,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,71,4,float64,150,25,16,16,,,,,,
+random,72,8,float32,150,7,22,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,72,8,float64,150,16,22,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,73,4,float32,150,11,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,73,4,float64,150,25,20,20,,,,,,
+random,74,8,float32,150,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,74,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,75,8,float32,150,7,1,1,,,,,,
+random,75,8,float64,150,16,1,1,,,,,,
+random,76,8,float32,150,7,4,4,,,,,,
+random,76,8,float64,150,16,4,4,,,,,,
+random,77,4,float32,150,11,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,77,4,float64,150,25,23,23,,,,,,
+random,78,4,float32,150,11,22,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,78,4,float64,150,25,22,22,,,,,,
+random,79,8,float32,150,7,8,8,4,4,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,79,8,float64,150,16,8,8,,,,,,
+random,80,4,float32,150,11,22,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,80,4,float64,150,25,22,22,,,,,,
+random,81,8,float32,150,7,13,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,81,8,float64,150,16,13,13,,,,,,
+random,82,4,float32,150,11,10,10,,,,,,
+random,82,4,float64,150,25,10,10,,,,,,
+random,83,8,float32,150,7,16,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,83,8,float64,150,16,16,16,,,,,,
+random,84,4,float32,150,11,14,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,84,4,float64,150,25,14,14,,,,,,
+random,85,8,float32,150,7,6,6,,,,,,
+random,85,8,float64,150,16,6,6,,,,,,
+random,86,8,float32,150,7,4,4,,,,,,
+random,86,8,float64,150,16,4,4,,,,,,
+random,87,8,float32,150,7,162,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,87,8,float64,150,16,162,17,6,6,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,88,8,float32,150,7,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,88,8,float64,150,16,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,89,4,float32,150,11,96,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,89,4,float64,150,25,96,26,11,11,invalid,26,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,90,8,float32,150,7,2,2,,,,,,
+random,90,8,float64,150,16,2,2,,,,,,
+random,91,8,float32,150,7,25,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+random,91,8,float64,150,16,25,0,0,0,wrong,24,input,input: the start vector is already rounded (tape too long)
+random,92,4,float32,150,11,16,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,92,4,float64,150,25,16,16,,,,,,
+random,93,4,float32,150,11,11,11,,,,,,
+random,93,4,float64,150,25,11,11,,,,,,
+random,94,4,float32,150,11,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,94,4,float64,150,25,19,19,43,,,,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,95,4,float32,150,11,167,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+random,95,4,float64,150,25,167,26,10,10,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,96,8,float32,150,7,1,1,,,,,,
+random,96,8,float64,150,16,1,1,,,,,,
+random,97,4,float32,150,11,16,0,0,0,wrong,16,input,input: the start vector is already rounded (tape too long)
+random,97,4,float64,150,25,16,16,,,,,,
+random,98,8,float32,150,7,37,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+random,98,8,float64,150,16,37,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+random,99,8,float32,150,7,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,99,8,float64,150,16,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,100,8,float32,150,7,15,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,100,8,float64,150,16,15,15,,,,,,
+random,101,4,float32,150,11,33,11,1,1,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,101,4,float64,150,25,33,25,139,139,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,102,4,float32,150,11,3,3,,,,,,
+random,102,4,float64,150,25,3,3,,,,,,
+random,103,4,float32,150,11,166,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,103,4,float64,150,25,166,26,11,11,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,104,4,float32,150,11,3,3,,,,,,
+random,104,4,float64,150,25,3,3,,,,,,
+random,105,4,float32,150,11,11,11,,,,,,
+random,105,4,float64,150,25,11,11,,,,,,
+random,106,4,float32,150,11,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,106,4,float64,150,25,23,23,38,,,,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,107,8,float32,150,7,4,4,,,,,,
+random,107,8,float64,150,16,4,4,,,,,,
+random,108,8,float32,150,7,18,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,108,8,float64,150,16,18,18,1,1,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,109,8,float32,150,7,18,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,109,8,float64,150,16,18,17,3,3,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,110,4,float32,150,11,5,5,,,,,,
+random,110,4,float64,150,25,5,5,,,,,,
+random,111,4,float32,150,11,22,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,111,4,float64,150,25,22,22,,,,,,
+random,112,8,float32,150,7,157,7,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,112,8,float64,150,16,157,17,11,11,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,113,8,float32,150,7,16,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,113,8,float64,150,16,16,16,,,,,,
+random,114,4,float32,150,11,8,8,,,,,,
+random,114,4,float64,150,25,8,8,,,,,,
+random,115,4,float32,150,11,1,1,,,,,,
+random,115,4,float64,150,25,1,1,,,,,,
+random,116,4,float32,150,11,8,8,,,,,,
+random,116,4,float64,150,25,8,8,,,,,,
+random,117,8,float32,150,7,36,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,117,8,float64,150,16,36,17,56,56,invalid,18,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,118,4,float32,150,11,3,3,,,,,,
+random,118,4,float64,150,25,3,3,,,,,,
+random,119,4,float32,150,11,16,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,119,4,float64,150,25,16,16,,,,,,
+random,120,4,float32,150,11,5,5,,,,,,
+random,120,4,float64,150,25,5,5,,,,,,
+random,121,4,float32,150,11,4,4,,,,,,
+random,121,4,float64,150,25,4,4,,,,,,
+random,122,8,float32,150,7,150,7,8,8,invalid,8,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,122,8,float64,150,16,150,17,18,18,invalid,18,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,123,8,float32,150,7,100,7,11,11,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,123,8,float64,150,16,100,17,26,26,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,124,4,float32,150,11,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,124,4,float64,150,25,21,21,,,,,,
+random,125,4,float32,150,11,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,125,4,float64,150,25,23,23,,,,,,
+random,126,4,float32,150,11,10,10,,,,,,
+random,126,4,float64,150,25,10,10,,,,,,
+random,127,8,float32,150,7,15,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,127,8,float64,150,16,15,15,,,,,,
+random,128,4,float32,150,11,18,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,128,4,float64,150,25,18,18,,,,,,
+random,129,4,float32,150,11,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,129,4,float64,150,25,21,21,,,,,,
+random,130,8,float32,150,7,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,130,8,float64,150,16,23,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,131,4,float32,150,11,144,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,131,4,float64,150,25,144,25,32,32,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,132,8,float32,150,7,16,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,132,8,float64,150,16,16,16,,,,,,
+random,133,4,float32,150,11,6,6,,,,,,
+random,133,4,float64,150,25,6,6,,,,,,
+random,134,4,float32,150,11,8,8,,,,,,
+random,134,4,float64,150,25,8,8,,,,,,
+random,135,8,float32,150,7,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,135,8,float64,150,16,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,136,4,float32,150,11,12,12,1,1,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,136,4,float64,150,25,12,12,54,,,,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,137,8,float32,150,7,19,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,137,8,float64,150,16,19,18,2,2,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,138,8,float32,150,7,6,6,,,,,,
+random,138,8,float64,150,16,6,6,,,,,,
+random,139,4,float32,150,11,15,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,139,4,float64,150,25,15,15,,,,,,
+random,140,8,float32,150,7,5,5,,,,,,
+random,140,8,float64,150,16,5,5,,,,,,
+random,141,8,float32,150,7,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,141,8,float64,150,16,23,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,142,8,float32,150,7,4,4,,,,,,
+random,142,8,float64,150,16,4,4,,,,,,
+random,143,4,float32,150,11,83,11,8,8,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,143,4,float64,150,25,83,26,38,38,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,144,4,float32,150,11,14,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,144,4,float64,150,25,14,14,,,,,,
+random,145,8,float32,150,7,2,2,,,,,,
+random,145,8,float64,150,16,2,2,,,,,,
+random,146,8,float32,150,7,17,0,0,0,wrong,17,input,input: the start vector is already rounded (tape too long)
+random,146,8,float64,150,16,17,17,,,,,,
+random,147,8,float32,150,7,92,0,0,0,wrong,17,input,input: the start vector is already rounded (tape too long)
+random,147,8,float64,150,16,92,17,1,1,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,148,8,float32,150,7,155,8,2,2,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,148,8,float64,150,16,155,17,13,13,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,149,4,float32,150,11,18,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,149,4,float64,150,25,18,18,,,,,,
+random,150,8,float32,150,7,20,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+random,150,8,float64,150,16,20,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,151,4,float32,150,11,7,7,,,,,,
+random,151,4,float64,150,25,7,7,,,,,,
+random,152,4,float32,150,11,84,11,5,5,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,152,4,float64,150,25,84,26,35,35,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,153,4,float32,150,11,10,10,,,,,,
+random,153,4,float64,150,25,10,10,,,,,,
+random,154,8,float32,150,7,13,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+random,154,8,float64,150,16,13,13,,,,,,
+random,155,8,float32,150,7,44,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,155,8,float64,150,16,44,17,14,14,invalid,17,left,left: (1-1/beta) r if move L  [work neuron]
+random,156,4,float32,150,11,18,0,0,0,wrong,18,input,input: the start vector is already rounded (tape too long)
+random,156,4,float64,150,25,18,18,,,,,,
+random,157,8,float32,150,7,11,0,0,0,invalid,10,input,input: the start vector is already rounded (tape too long)
+random,157,8,float64,150,16,11,11,,,,,,
+random,158,4,float32,150,11,5,5,,,,,,
+random,158,4,float64,150,25,5,5,,,,,,
+random,159,8,float32,150,7,13,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+random,159,8,float64,150,16,13,13,,,,,,
+random,160,8,float32,150,7,20,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,160,8,float64,150,16,20,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,161,8,float32,150,7,4,4,,,,,,
+random,161,8,float64,150,16,4,4,,,,,,
+random,162,8,float32,150,7,14,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,162,8,float64,150,16,14,14,,,,,,
+random,163,4,float32,150,11,5,5,,,,,,
+random,163,4,float64,150,25,5,5,,,,,,
+random,164,8,float32,150,7,19,0,0,0,wrong,18,input,input: the start vector is already rounded (tape too long)
+random,164,8,float64,150,16,19,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,165,8,float32,150,7,10,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,165,8,float64,150,16,10,10,,,,,,
+random,166,8,float32,150,7,151,8,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,166,8,float64,150,16,151,17,17,17,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,167,4,float32,150,11,14,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,167,4,float64,150,25,14,14,,,,,,
+random,168,4,float32,150,11,6,6,,,,,,
+random,168,4,float64,150,25,6,6,,,,,,
+random,169,8,float32,150,7,11,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+random,169,8,float64,150,16,11,11,,,,,,
+random,170,4,float32,150,11,15,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,170,4,float64,150,25,15,15,,,,,,
+random,171,4,float32,150,11,1,1,,,,,,
+random,171,4,float64,150,25,1,1,,,,,,
+random,172,4,float32,150,11,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,172,4,float64,150,25,20,20,,,,,,
+random,173,4,float32,150,11,0,0,,,,,,
+random,173,4,float64,150,25,0,0,,,,,,
+random,174,8,float32,150,7,162,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+random,174,8,float64,150,16,162,17,6,6,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,175,8,float32,150,7,5,5,,,,,,
+random,175,8,float64,150,16,5,5,,,,,,
+random,176,8,float32,150,7,10,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,176,8,float64,150,16,10,10,,,,,,
+random,177,4,float32,150,11,4,4,,,,,,
+random,177,4,float64,150,25,4,4,,,,,,
+random,178,8,float32,150,7,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,178,8,float64,150,16,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,179,4,float32,150,11,13,12,1,1,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,179,4,float64,150,25,13,13,,,,,,
+random,180,4,float32,150,11,15,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,180,4,float64,150,25,15,15,,,,,,
+random,181,8,float32,150,7,157,7,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,181,8,float64,150,16,157,17,11,11,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,182,4,float32,150,11,7,7,,,,,,
+random,182,4,float64,150,25,7,7,,,,,,
+random,183,8,float32,150,7,141,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,183,8,float64,150,16,141,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,184,8,float32,150,7,6,6,,,,,,
+random,184,8,float64,150,16,6,6,,,,,,
+random,185,4,float32,150,11,11,11,,,,,,
+random,185,4,float64,150,25,11,11,,,,,,
+random,186,4,float32,150,11,5,5,,,,,,
+random,186,4,float64,150,25,5,5,,,,,,
+random,187,4,float32,150,11,152,11,10,10,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,187,4,float64,150,25,152,26,25,25,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,188,8,float32,150,7,13,0,0,0,wrong,12,input,input: the start vector is already rounded (tape too long)
+random,188,8,float64,150,16,13,13,,,,,,
+random,189,4,float32,150,11,2,2,,,,,,
+random,189,4,float64,150,25,2,2,,,,,,
+random,190,4,float32,150,11,21,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,190,4,float64,150,25,21,21,,,,,,
+random,191,8,float32,150,7,11,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,191,8,float64,150,16,11,11,,,,,,
+random,192,4,float32,150,11,170,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,192,4,float64,150,25,170,26,7,7,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,193,8,float32,150,7,5,5,,,,,,
+random,193,8,float64,150,16,5,5,,,,,,
+random,194,8,float32,150,7,135,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,194,8,float64,150,16,135,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,195,8,float32,150,7,14,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,195,8,float64,150,16,14,14,,,,,,
+random,196,8,float32,150,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,196,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,197,4,float32,150,11,2,2,32,,,,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,197,4,float64,150,25,2,2,77,,,,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,198,8,float32,150,7,38,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,198,8,float64,150,16,38,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,199,8,float32,150,7,3,3,,,,,,
+random,199,8,float64,150,16,3,3,,,,,,
+random,200,8,float32,150,7,23,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,200,8,float64,150,16,23,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,201,8,float32,150,7,14,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,201,8,float64,150,16,14,14,,,,,,
+random,202,8,float32,150,7,21,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,202,8,float64,150,16,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,203,4,float32,150,11,19,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,203,4,float64,150,25,19,19,,,,,,
+random,204,8,float32,150,7,16,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,204,8,float64,150,16,16,16,,,,,,
+random,205,4,float32,150,11,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,205,4,float64,150,25,23,23,,,,,,
+random,206,4,float32,150,11,17,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,206,4,float64,150,25,17,17,,,,,,
+random,207,4,float32,150,11,8,8,,,,,,
+random,207,4,float64,150,25,8,8,,,,,,
+random,208,4,float32,150,11,18,0,0,0,invalid,18,input,input: the start vector is already rounded (tape too long)
+random,208,4,float64,150,25,18,18,,,,,,
+random,209,8,float32,150,7,10,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,209,8,float64,150,16,10,10,,,,,,
+random,210,8,float32,150,7,22,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,210,8,float64,150,16,22,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,211,4,float32,150,11,14,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,211,4,float64,150,25,14,14,,,,,,
+random,212,4,float32,150,11,8,8,,,,,,
+random,212,4,float64,150,25,8,8,,,,,,
+random,213,4,float32,150,11,8,8,,,,,,
+random,213,4,float64,150,25,8,8,,,,,,
+random,214,8,float32,150,7,13,0,0,0,wrong,13,input,input: the start vector is already rounded (tape too long)
+random,214,8,float64,150,16,13,13,,,,,,
+random,215,8,float32,150,7,26,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,215,8,float64,150,16,26,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,216,8,float32,150,7,4,4,,,,,,
+random,216,8,float64,150,16,4,4,,,,,,
+random,217,8,float32,150,7,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,217,8,float64,150,16,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,218,8,float32,150,7,169,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+random,218,8,float64,150,16,169,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,219,8,float32,150,7,0,0,,,,,,
+random,219,8,float64,150,16,0,0,,,,,,
+random,220,4,float32,150,11,18,0,0,0,wrong,18,input,input: the start vector is already rounded (tape too long)
+random,220,4,float64,150,25,18,18,,,,,,
+random,221,4,float32,150,11,8,8,,,,,,
+random,221,4,float64,150,25,8,8,,,,,,
+random,222,8,float32,150,7,3,3,,,,,,
+random,222,8,float64,150,16,3,3,,,,,,
+random,223,4,float32,150,11,25,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,223,4,float64,150,25,25,25,,,,,,
+random,224,8,float32,150,7,8,7,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,224,8,float64,150,16,8,8,,,,,,
+random,225,4,float32,150,11,9,9,,,,,,
+random,225,4,float64,150,25,9,9,,,,,,
+random,226,4,float32,150,11,6,6,,,,,,
+random,226,4,float64,150,25,6,6,,,,,,
+random,227,4,float32,150,11,15,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,227,4,float64,150,25,15,15,,,,,,
+random,228,4,float32,150,11,23,0,0,0,wrong,23,input,input: the start vector is already rounded (tape too long)
+random,228,4,float64,150,25,23,23,,,,,,
+random,229,4,float32,150,11,1,1,,,,,,
+random,229,4,float64,150,25,1,1,,,,,,
+random,230,8,float32,150,7,14,0,0,0,invalid,14,input,input: the start vector is already rounded (tape too long)
+random,230,8,float64,150,16,14,14,,,,,,
+random,231,4,float32,150,11,2,2,,,,,,
+random,231,4,float64,150,25,2,2,,,,,,
+random,232,4,float32,150,11,1,1,13,,,,table,"case 2 = (q0, a): hat, part 1  [register r]"
+random,232,4,float64,150,25,1,1,27,,,,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,233,4,float32,150,11,12,11,1,1,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,233,4,float64,150,25,12,12,,,,,,
+random,234,8,float32,150,7,172,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,234,8,float64,150,16,172,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,235,8,float32,150,7,5,5,,,,,,
+random,235,8,float64,150,16,5,5,,,,,,
+random,236,4,float32,150,11,3,3,,,,,,
+random,236,4,float64,150,25,3,3,,,,,,
+random,237,4,float32,150,11,4,4,,,,,,
+random,237,4,float64,150,25,4,4,,,,,,
+random,238,4,float32,150,11,11,11,,,,,,
+random,238,4,float64,150,25,11,11,,,,,,
+random,239,4,float32,150,11,164,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,239,4,float64,150,25,164,26,13,13,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,240,4,float32,150,11,5,5,,,,,,
+random,240,4,float64,150,25,5,5,,,,,,
+random,241,8,float32,150,7,89,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,241,8,float64,150,16,89,17,6,6,invalid,17,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,242,4,float32,150,11,24,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+random,242,4,float64,150,25,24,24,,,,,,
+random,243,4,float32,150,11,19,0,0,0,wrong,19,input,input: the start vector is already rounded (tape too long)
+random,243,4,float64,150,25,19,19,,,,,,
+random,244,8,float32,150,7,1,1,,,,,,
+random,244,8,float64,150,16,1,1,,,,,,
+random,245,8,float32,150,7,16,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,245,8,float64,150,16,16,16,,,,,,
+random,246,8,float32,150,7,83,8,1,1,invalid,9,table,"case 3 = (q0, b): hat, part 1  [register r]"
+random,246,8,float64,150,16,83,17,19,19,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,247,4,float32,150,11,9,9,,,,,,
+random,247,4,float64,150,25,9,9,,,,,,
+random,248,8,float32,150,7,154,7,4,4,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,248,8,float64,150,16,154,17,14,14,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,249,4,float32,150,11,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,249,4,float64,150,25,20,20,,,,,,
+random,250,8,float32,150,7,16,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,250,8,float64,150,16,16,16,,,,,,
+random,251,8,float32,150,7,22,0,0,0,invalid,22,input,input: the start vector is already rounded (tape too long)
+random,251,8,float64,150,16,22,0,0,0,wrong,22,input,input: the start vector is already rounded (tape too long)
+random,252,8,float32,150,7,84,0,0,0,invalid,9,input,input: the start vector is already rounded (tape too long)
+random,252,8,float64,150,16,84,17,17,17,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,253,4,float32,150,11,88,0,0,0,invalid,13,input,input: the start vector is already rounded (tape too long)
+random,253,4,float64,150,25,88,26,27,27,invalid,26,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,254,8,float32,150,7,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,254,8,float64,150,16,23,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,255,4,float32,150,11,30,12,1,1,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,255,4,float64,150,25,30,25,121,121,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,256,8,float32,150,7,6,6,,,,,,
+random,256,8,float64,150,16,6,6,,,,,,
+random,257,8,float32,150,7,156,7,2,2,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,257,8,float64,150,16,156,17,12,12,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,258,8,float32,150,7,21,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,258,8,float64,150,16,21,0,0,0,wrong,21,input,input: the start vector is already rounded (tape too long)
+random,259,4,float32,150,11,4,4,,,,,,
+random,259,4,float64,150,25,4,4,,,,,,
+random,260,8,float32,150,7,6,6,,,,,,
+random,260,8,float64,150,16,6,6,,,,,,
+random,261,8,float32,150,7,6,6,,,,,,
+random,261,8,float64,150,16,6,6,,,,,,
+random,262,4,float32,150,11,40,11,36,36,invalid,12,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,262,4,float64,150,25,40,25,92,92,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,263,8,float32,150,7,16,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,263,8,float64,150,16,16,16,,,,,,
+random,264,4,float32,150,11,17,0,0,0,wrong,16,input,input: the start vector is already rounded (tape too long)
+random,264,4,float64,150,25,17,17,,,,,,
+random,265,8,float32,150,7,11,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+random,265,8,float64,150,16,11,11,,,,,,
+random,266,4,float32,150,11,16,0,0,0,wrong,16,input,input: the start vector is already rounded (tape too long)
+random,266,4,float64,150,25,16,16,,,,,,
+random,267,4,float32,150,11,76,11,21,21,invalid,12,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,267,4,float64,150,25,76,25,49,49,invalid,26,scale,scale: (1-1/beta) l if move R  [work neuron]
+random,268,8,float32,150,7,8,7,3,3,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,268,8,float64,150,16,8,8,,,,,,
+random,269,8,float32,150,7,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,269,8,float64,150,16,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,270,4,float32,150,11,15,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,270,4,float64,150,25,15,15,,,,,,
+random,271,8,float32,150,7,16,0,0,0,invalid,16,input,input: the start vector is already rounded (tape too long)
+random,271,8,float64,150,16,16,16,,,,,,
+random,272,4,float32,150,11,10,10,,,,,,
+random,272,4,float64,150,25,10,10,,,,,,
+random,273,4,float32,150,11,7,7,,,,,,
+random,273,4,float64,150,25,7,7,,,,,,
+random,274,8,float32,150,7,157,7,1,1,invalid,8,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,274,8,float64,150,16,157,17,11,11,invalid,18,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,275,8,float32,150,7,20,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,275,8,float64,150,16,20,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,276,4,float32,150,11,2,2,,,,,,
+random,276,4,float64,150,25,2,2,,,,,,
+random,277,8,float32,150,7,12,0,0,0,invalid,11,input,input: the start vector is already rounded (tape too long)
+random,277,8,float64,150,16,12,12,,,,,,
+random,278,8,float32,150,7,4,4,,,,,,
+random,278,8,float64,150,16,4,4,,,,,,
+random,279,4,float32,150,11,48,11,4,4,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,279,4,float64,150,25,48,26,62,62,invalid,26,left,left: (1-1/beta) r if move L  [work neuron]
+random,280,8,float32,150,7,6,6,,,,,,
+random,280,8,float64,150,16,6,6,,,,,,
+random,281,4,float32,150,11,22,0,0,0,invalid,21,input,input: the start vector is already rounded (tape too long)
+random,281,4,float64,150,25,22,22,,,,,,
+random,282,4,float32,150,11,17,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,282,4,float64,150,25,17,17,,,,,,
+random,283,4,float32,150,11,173,0,0,0,invalid,23,input,input: the start vector is already rounded (tape too long)
+random,283,4,float64,150,25,173,26,4,4,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,284,4,float32,150,11,94,0,0,0,invalid,19,input,input: the start vector is already rounded (tape too long)
+random,284,4,float64,150,25,94,26,15,15,invalid,26,left,left: (1-1/beta) r if move L  [work neuron]
+random,285,8,float32,150,7,14,0,0,0,invalid,12,input,input: the start vector is already rounded (tape too long)
+random,285,8,float64,150,16,14,14,,,,,,
+random,286,8,float32,150,7,162,0,0,0,wrong,15,input,input: the start vector is already rounded (tape too long)
+random,286,8,float64,150,16,162,17,3,3,invalid,17,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,287,8,float32,150,7,1,1,,,,,,
+random,287,8,float64,150,16,1,1,,,,,,
+random,288,8,float32,150,7,24,0,0,0,invalid,24,input,input: the start vector is already rounded (tape too long)
+random,288,8,float64,150,16,24,0,0,0,wrong,24,input,input: the start vector is already rounded (tape too long)
+random,289,8,float32,150,7,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,289,8,float64,150,16,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,290,8,float32,150,7,14,0,0,0,wrong,14,input,input: the start vector is already rounded (tape too long)
+random,290,8,float64,150,16,14,14,,,,,,
+random,291,4,float32,150,11,5,5,,,,,,
+random,291,4,float64,150,25,5,5,,,,,,
+random,292,4,float32,150,11,16,0,0,0,invalid,15,input,input: the start vector is already rounded (tape too long)
+random,292,4,float64,150,25,16,16,,,,,,
+random,293,4,float32,150,11,5,5,,,,,,
+random,293,4,float64,150,25,5,5,,,,,,
+random,294,4,float32,150,11,11,11,,,,,,
+random,294,4,float64,150,25,11,11,,,,,,
+random,295,4,float32,150,11,158,11,4,4,invalid,12,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,295,4,float64,150,25,158,26,19,19,invalid,27,scale,scale: (1-1/beta) r if move L or S  [work neuron]
+random,296,8,float32,150,7,2,2,,,,,,
+random,296,8,float64,150,16,2,2,,,,,,
+random,297,4,float32,150,11,18,0,0,0,invalid,17,input,input: the start vector is already rounded (tape too long)
+random,297,4,float64,150,25,18,18,,,,,,
+random,298,8,float32,150,7,20,0,0,0,invalid,20,input,input: the start vector is already rounded (tape too long)
+random,298,8,float64,150,16,20,0,0,0,wrong,20,input,input: the start vector is already rounded (tape too long)
+random,299,8,float32,150,7,2,2,,,,,,
+random,299,8,float64,150,16,2,2,,,,,,

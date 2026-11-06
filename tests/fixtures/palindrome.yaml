@@ -1,0 +1,31 @@
+# Bare turingmachine.io source with synonyms; accept/reject are halting states.
+input: abaaba
+blank: ' '
+start state: first
+synonyms:
+  yes: {R: accept}          # 'yes' stays a string (YAML 1.2 rules, as in js-yaml)
+  no: {R: reject}
+table:
+  first:
+    a: {write: ' ', R: carryA}
+    b: {write: ' ', R: carryB}
+    ' ': yes
+  carryA:
+    [a, b]: R
+    ' ': {L: lastA}
+  carryB:
+    [a, b]: R
+    ' ': {L: lastB}
+  lastA:
+    a: {write: ' ', L: home}
+    b: no
+    ' ': yes
+  lastB:
+    b: {write: ' ', L: home}
+    a: no
+    ' ': yes
+  home:
+    [a, b]: L
+    ' ': {R: first}
+  accept:
+  reject:

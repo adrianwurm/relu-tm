@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the papers below."
+title: "relu-tm: a fixed width-4 ReLU network that simulates any Turing machine"
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/adrianwurm/relu-tm"
+authors:
+  - family-names: Wurm
+    given-names: Adrian
+references:
+  - type: conference-paper
+    title: "A Universal Uniform Approximation Theorem for Neural Networks"
+    authors:
+      - family-names: Bournez
+        given-names: Olivier
+      - family-names: Cohen
+        given-names: Johanne
+      - family-names: Wurm
+        given-names: Adrian
+    collection-title: "50th International Symposium on Mathematical Foundations of Computer Science (MFCS 2025)"
+    year: 2025
+    doi: 10.4230/LIPIcs.MFCS.2025.29
+  - type: conference-paper
+    title: "Fractal Gadgets for Neural Networks: The Complexity of the Narrow Regime"
+    authors:
+      - family-names: Bournez
+        given-names: Olivier
+      - family-names: Cohen
+        given-names: Johanne
+      - family-names: Cohen
+        given-names: Laura
+      - family-names: Wurm
+        given-names: Adrian
+    collection-title: "Advances in Neural Information Processing Systems (NeurIPS 2026)"
+    year: 2026
+    url: "https://arxiv.org/abs/2610.06092"

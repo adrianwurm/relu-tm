@@ -1,0 +1,7 @@
+# Keep LF line endings in the repository and in every working copy
+# (also on Windows, where Git would otherwise convert to CRLF).
+* text=auto eol=lf
+
+# Binary files: never touch
+*.png binary
+*.pdf binary

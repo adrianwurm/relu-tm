@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>pda</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="push"><x>100.0</x><y>100.0</y><initial/></state>
+		<state id="1" name="pop"><x>250.0</x><y>100.0</y></state>
+		<state id="2" name="acc"><x>400.0</x><y>100.0</y><final/></state>
+		<!--The list of transitions.-->
+		<!-- pop is empty (λ): push 'a' on top of whatever is there -->
+		<transition><from>0</from><to>0</to><read>a</read><pop/><push>a</push></transition>
+		<transition><from>0</from><to>1</to><read>b</read><pop>a</pop><push/></transition>
+		<transition><from>1</from><to>1</to><read>b</read><pop>a</pop><push/></transition>
+		<transition><from>1</from><to>2</to><read/><pop>Z</pop><push>Z</push></transition>
+	</automaton>
+</structure>

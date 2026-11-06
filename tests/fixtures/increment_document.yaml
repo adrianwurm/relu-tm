@@ -1,0 +1,19 @@
+# A machine saved as a turingmachine.io *document* (name + source code + positions).
+name: increment
+source code: |
+  # Adds one to a binary number; the head starts on the leftmost digit.
+  input: '0111'
+  blank: ' '
+  start state: scan
+  table:
+    scan:
+      [0, 1]: R            # list key = several symbols, no write, same state
+      ' ': {L: add}
+    add:
+      1: {write: 0, L}     # no target state: stay in "add"
+      '0, ': {write: 1, R: stop}   # comma key: '0' and ' '
+    stop:
+positions:
+  scan: {x: 200, y: 200}
+  add: {x: 350, y: 200}
+  stop: {x: 500, y: 200}

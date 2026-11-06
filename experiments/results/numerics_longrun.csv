@@ -1,0 +1,7 @@
+base,ramps,dtype,steps,first_failure,tape_at_failure,max_tape,max_error_until_100,max_error_until_1000,max_error_until_10000,max_error_until_20000
+6,edge,float32,20000,17,3,13,1.74e-03,1.74e-03,1.74e-03,1.74e-03
+6,edge,float64,20000,9,2,13,2.57e-04,2.57e-04,2.57e-04,2.57e-04
+6,centre,float32,20000,482,6,13,1.18e-03,4.36e-02,4.36e-02,4.36e-02
+6,centre,float64,20000,,,13,4.55e-12,7.92e-09,1.80e-04,2.15e-03
+8,edge,float32,20000,503,8,13,0.00e+00,1.25e-01,1.25e-01,1.25e-01
+8,edge,float64,20000,,,13,0.00e+00,0.00e+00,0.00e+00,0.00e+00
