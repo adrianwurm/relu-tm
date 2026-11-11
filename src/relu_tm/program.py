@@ -13,7 +13,7 @@ forward.  The only non-linearity is in ``w``; chaining ``w`` through a few
 layers evaluates nested expressions such as ``ReLU(1 - ReLU(4r - 1))``,
 and adding a multiple of ``w`` to a register commits the result.  This is
 the "keep the inputs alive, compute in one extra neuron" discipline of
-Lemma 3.1 in the NeurIPS 2026 paper.
+Lemma 3.1 in Bournez, Cohen, Cohen & Wurm (FST/TCS 2026, arXiv:2610.06092).
 
 :class:`ProgramBuilder` offers three operations:
 

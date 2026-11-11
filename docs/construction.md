@@ -11,7 +11,8 @@ A network $N\in\mathcal{NN}^{3,3,4}_{\mathrm{ReLU}}$ is
 $A_{\mathrm{out}}\circ R_L\circ\dots\circ R_1\circ A_{\mathrm{in}}$ with
 rational affine maps $A_{\mathrm{in}}:\mathbb{R}^3\to\mathbb{R}^4$,
 $A_{\mathrm{out}}:\mathbb{R}^4\to\mathbb{R}^3$, and hidden layers $R_\ell$ of
-exactly four ReLU neurons (notation of the NeurIPS 2026 paper, Def. 2.1).
+exactly four ReLU neurons (notation of Bournez, Cohen, Cohen & Wurm, FST/TCS 2026,
+Def. 2.1).
 $N$ maps the encoding of a configuration to the encoding of its successor, so
 the iterate $N^{[t]}$ simulates $t$ steps.
 
@@ -20,7 +21,8 @@ ReLU network. The RNN has no external input: the input word is part of
 $x_0$. Its cell is a deep feed-forward network (one step of the machine =
 $L$ layers). This is the "fixed recurrent network" of MFCS 2025.
 Unrolled, $N^{[t]}$ is a feed-forward network of width 4 and depth $tL$,
-the "iterated composition" of the NeurIPS 2026 paper, Def. 2.1.
+the iterated network of the NeurIPS 2026 paper (Bournez, Cohen & Wurm,
+Section 2.1).
 
 In PyTorch, $N$ is `Linear(3,4)`, then pairs of `ReLU`/`Linear(4,4)`, then
 `Linear(4,3)`. `StepNetwork.iterate` runs the recurrence.
@@ -70,7 +72,7 @@ $\mathrm{ReLU}(1-\mathrm{ReLU}(4\bar r-1))$. Adding a multiple of `w` to a
 register commits the result. Each `ReLU` costs one layer. Affine register
 updates are free because they fold into the next layer. This is the
 "keep the inputs alive, compute in one extra neuron" principle of Lemma 3.1
-in the NeurIPS 2026 paper. `ProgramBuilder` implements it in about 60 lines.
+in the FST/TCS 2026 paper. `ProgramBuilder` implements it in about 60 lines.
 `relu-tm info bb2 --program` prints the resulting layer listing.
 
 ## 4. One step = five passes
@@ -163,12 +165,14 @@ All weights are dyadic rationals with small denominators. All operations
 are exact in binary floating point as long as every register value fits
 into the mantissa: about $(\text{digits})\cdot\log_2\beta$ bits plus a few
 bits of headroom, against 53 bits for float64 and 24 bits for float32.
-First measurement with the `filler` machine (one new base-4 digit per step):
-float64 is exact up to 25 digits and float32 up to 11. Beyond that, digits
-are rounded away and the decoded configuration is wrong. A systematic
-study is step 5 of the project.
+In base 4, every register may hold 25 digits in float64 and 11 in float32
+(guaranteed for every machine; depending on the digits one more may work).
+Beyond that, digits are rounded away and the decoded configuration is
+wrong. The full study is in [numerics.md](numerics.md).
 
 ## 6. Relation to the papers
+
+### MFCS 2025, Theorem 23
 
 | | MFCS 2025, Lemma 19 / Thm 23 | this package |
 |---|---|---|
@@ -185,7 +189,45 @@ only lead to the same transition because both mean "blank" for the machine.
 A construction that needs to tell them apart (e.g. to detect the end of the
 used tape) can simply give the two codes different rows in pass 1.
 
-The NeurIPS 2026 paper (arXiv:2610.06092) uses the same digit gadgets and
-the same compilation discipline. It proves that *verifying* such narrow
-networks is NP-complete at width 4 on all of $[0,1]$, and at width 3 on the
-encoding set.
+### NeurIPS 2026, Theorem 3
+
+Bournez, Cohen & Wurm (NeurIPS 2026) build, for every deterministic TM $M$
+over a binary alphabet, a network $N_M:[0,1]^4\to[0,1]^4$ of width 4. One
+iteration consists of
+
+* **Stage 1**, a width-3 TM step on $(x_1, x_2, x_3)$ = (left tape, state ∥
+  right tape, scratch), Theorem 12 of the paper, after MFCS 2025, Thm 23;
+* **Stages 2+3**, the certificate $x_4\leftarrow\max\lbrace x_4,\varepsilon(x_1,x_2)\rbrace$,
+  which checks one leading digit per iteration and irreversibly flags every
+  point of $[0,1]^4$ whose simulation reads a digit outside $\lbrace 1,3\rbrace$
+  or an invalid state.
+
+Part (i) of Theorem 3 is the exact simulation, part (ii) the certificate.
+
+**This package implements the simulation only, not the certificate.** It
+makes no claim about inputs that are not encodings of configurations. Its
+width 4 is also not the width 4 of Theorem 3:
+
+| | NeurIPS 2026, Theorem 3 | this package |
+|---|---|---|
+| simulation, part (i) | Stage 1 at width 3 | at width 4 |
+| certificate, part (ii) | $x_4$ | not implemented |
+| neurons | $x_1$ left tape, $x_2$ state ∥ right tape, $x_3$ scratch, $x_4$ certificate | $\bar l$, $\bar r$, $q$ (state index, an integer) and the work neuron $w$ |
+| domain | $[0,1]^4\to[0,1]^4$ | $\mathbb{R}^3\to\mathbb{R}^3$ |
+| machines | binary alphabet, infinite tapes $\tau\in\lbrace 0,1\rbrace^\omega$ | any finite alphabet, finite tapes |
+| encoding | digits $\lbrace 1,3\rbrace$ only | odd digits, $0$ for the infinite blank tail |
+| iterations per TM step | a constant $C_M$ | exactly 1 |
+
+The certificate would flag the digit 0 of the blank tail. Adding part (ii)
+to this package would therefore need the paper's encoding (infinite tapes
+over $\lbrace 1,3\rbrace$) as well as the gadget
+$\mathrm{err}(x)=\mathrm{ReLU}(3-x-\mathrm{ReLU}(5-2x-\mathrm{ReLU}(2-x+\mathrm{ReLU}(1-x))))$,
+which vanishes exactly on $[1,2]\cup[3,4]$.
+
+### FST/TCS 2026
+
+The companion paper, Bournez, Cohen, Cohen & Wurm, *Fractal Gadgets for
+Neural Networks* (FST/TCS 2026, arXiv:2610.06092), uses the same digit
+gadgets and the same compilation discipline (Lemma 3.1). It proves that
+*verifying* narrow networks is NP-complete at width 4 on all of $[0,1]$,
+and at width 3 on the encoding set.

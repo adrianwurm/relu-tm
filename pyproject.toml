@@ -31,7 +31,8 @@ relu-tm = "relu_tm.cli:main"
 
 [project.urls]
 Source = "https://github.com/adrianwurm/relu-tm"
-Paper = "https://arxiv.org/abs/2610.06092"
+Paper = "https://neurips.cc/virtual/2026/poster/148965"
+"Companion paper (FST/TCS 2026)" = "https://arxiv.org/abs/2610.06092"
 "TM construction (MFCS 2025)" = "https://doi.org/10.4230/LIPIcs.MFCS.2025.29"
 
 [tool.hatch.build.targets.wheel]

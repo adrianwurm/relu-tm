@@ -22,6 +22,18 @@ references:
     year: 2025
     doi: 10.4230/LIPIcs.MFCS.2025.29
   - type: conference-paper
+    title: "Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces and the Complexity of Verification"
+    authors:
+      - family-names: Bournez
+        given-names: Olivier
+      - family-names: Cohen
+        given-names: Johanne
+      - family-names: Wurm
+        given-names: Adrian
+    collection-title: "Advances in Neural Information Processing Systems (NeurIPS 2026)"
+    year: 2026
+    url: "https://neurips.cc/virtual/2026/poster/148965"
+  - type: conference-paper
     title: "Fractal Gadgets for Neural Networks: The Complexity of the Narrow Regime"
     authors:
       - family-names: Bournez
@@ -32,6 +44,6 @@ references:
         given-names: Laura
       - family-names: Wurm
         given-names: Adrian
-    collection-title: "Advances in Neural Information Processing Systems (NeurIPS 2026)"
+    collection-title: "46th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science (FST/TCS 2026)"
     year: 2026
     url: "https://arxiv.org/abs/2610.06092"

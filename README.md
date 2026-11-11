@@ -13,12 +13,18 @@ tape, state) to the encoding of the next configuration.
 $N$ is used as a **recurrent network**: its output is fed back as the next
 input, $x_{t+1} = N(x_t)$. This is an RNN without external input, whose cell
 is a deep feed-forward network of width 4. Unrolled for $t$ steps it becomes
-the feed-forward network $N^{[t]}$ of width 4. That is the kind of network
-whose verification the NeurIPS 2026 paper studies.
+the feed-forward network $N^{[t]}$ of width 4. These iterated width-4
+networks are the subject of the NeurIPS 2026 paper by Bournez, Cohen & Wurm
+(see [below](#relation-to-the-neurips-2026-paper)).
 
 A classical emulator checks the network after **every** step, in exact
 rational arithmetic (fractions, or fast dyadic integers) and in
 float32/float64.
+
+> **Scope.** `relu-tm` implements the *simulation* only: part (i) of
+> Theorem 3 of the paper, in a width-4 variant. It does **not** implement
+> the certificate of Theorem 3 (part (ii)), and it makes no claim about
+> inputs that are not encodings of configurations.
 
 ![BB(4) simulated by the network: the tape decoded from the network after every step, and the state register and work neuron through the 52 layers of one step](docs/figures/core.png)
 
@@ -140,7 +146,31 @@ All 15 example machines of turingmachine.io import correctly and run identically
   hidden layers (BB(4): 52).
 
 The full construction, every inequality it uses, and the deviations from
-the paper are in [docs/construction.md](docs/construction.md).
+the papers are in [docs/construction.md](docs/construction.md).
+
+## Relation to the NeurIPS 2026 paper
+
+Theorem 3 of Bournez, Cohen & Wurm (NeurIPS 2026) builds, for every
+Turing machine $M$, a network $N_M:[0,1]^4\to[0,1]^4$ of width 4 with two
+properties: (i) its iterates simulate $M$ exactly on encoded tapes, and
+(ii) a fourth coordinate, the *certificate*, irreversibly flags every point
+of $[0,1]^4$ whose simulation reads an invalid digit. The certificate is
+what makes the hardness results of the paper hold on convex input regions.
+
+| | Theorem 3 of the paper | `relu-tm` |
+|---|---|---|
+| simulation, part (i) | yes: a width-3 step (Stage 1, after MFCS 2025) | **yes**, tested step by step against an emulator |
+| certificate, part (ii) | yes: $x_4 \leftarrow \max\lbrace x_4, \varepsilon(x_1,x_2)\rbrace$ | **no** |
+| the four neurons | $x_1$ left tape, $x_2$ state ∥ right tape, $x_3$ scratch, $x_4$ certificate | $\bar l$ left tape, $\bar r$ right tape, $q$ state, $w$ work neuron |
+| machines | deterministic, binary alphabet, infinite tapes | deterministic, any finite alphabet, finite tapes |
+| encoding | base 4, digits $\lbrace 1,3\rbrace$ only | odd digits for all symbols; digit $0$ for the blank tail |
+
+So the width 4 of `relu-tm` is not the width 4 of Theorem 3. The paper
+needs width 3 for the simulation alone and pays the fourth neuron for the
+certificate. `relu-tm` keeps the state in its own register instead of
+packing it into the right tape, which costs the fourth neuron. A
+certificate as in the paper would also flag the digit 0 that `relu-tm` uses
+for the blank tail, so adding it would require the paper's encoding.
 
 ## Notebook
 
@@ -158,7 +188,7 @@ To run it: `pip install -e ".[notebook]"` and `jupyter lab notebooks/tour.ipynb`
 ## Tests
 
 ```bash
-pytest                       # ~100 tests, about 10 s
+pytest                       # ~180 tests, about 20 s
 HYPOTHESIS_PROFILE=ci pytest # more random examples, as in CI
 ```
 
@@ -175,20 +205,25 @@ With exact rationals the simulation never fails. With the same weights in
 floating point ([docs/numerics.md](docs/numerics.md), `relu-tm precision ...`):
 
 * **Base 2^m** (default): all weights are dyadic, so float is *bit-exact* as
-  long as every register fits into the mantissa. The limit in digits per
-  register is predicted exactly by ⌊(p−1−h)/m⌋, with p = 24 or 53 significand
-  bits and 2^h the largest power of two in κ(x+d) during the push:
+  long as every register fits into the mantissa. With p = 24 or 53
+  significand bits, every register may hold ⌊p/m⌋ − 1 digits, whatever the
+  machine does:
 
   | base | float32 | float64 |
   |---|---|---|
   | 4 | 11 | 25 |
-  | 8 | 7 | 16–17 |
+  | 8 | 7 | 16 |
   | 16 | 5 | 12 |
 
-  Beyond that limit the simulation breaks abruptly. The number of steps does
-  not matter. In 692 runs (BB(4), counter, adder, palindrome, 300 random
-  machines), no run failed while its registers stayed within ⌊p/m⌋ − 1
-  digits.
+  These are guaranteed values. In 692 runs (BB(4), counter, adder,
+  palindrome, 300 random machines), no run failed while its registers
+  stayed within them. Some runs get one digit further, but not reliably:
+  the exact limit of a push is ⌊(p−1−h)/m⌋, with 2^h the largest power of
+  two in κ(x+d), so it depends on the digit d (in base 4 and float64, 26
+  digits when d = 1, 25 when d = 3). Beyond the limit the simulation
+  breaks abruptly, and the number of steps does not matter. Example: BB(4)
+  needs 14 digits, so float64 runs all 107 steps bit-exactly, while float32
+  breaks at step 90.
 * **Other bases** (6, 10, 12) round from the first step. If the machine reads
   its tape back, the digit tests of the papers amplify these errors, and the
   simulation fails after a few steps on a tape of only 2–6 cells. With the
@@ -209,8 +244,14 @@ floating point ([docs/numerics.md](docs/numerics.md), `relu-tm precision ...`):
 
 * O. Bournez, J. Cohen, A. Wurm. *A Universal Uniform Approximation Theorem for Neural Networks.*
   MFCS 2025. [doi:10.4230/LIPIcs.MFCS.2025.29](https://doi.org/10.4230/LIPIcs.MFCS.2025.29). Thm 23 is the width-3 TM construction this package follows.
+* O. Bournez, J. Cohen, A. Wurm. *Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces
+  and the Complexity of Verification.* NeurIPS 2026, [poster page](https://neurips.cc/virtual/2026/poster/148965).
+  Theorem 3: a width-4 network simulates any Turing machine, with a certificate on all of $[0,1]^4$ (`relu-tm`
+  implements the simulation, not the certificate). Theorem 7: reachability for iterated width-4 networks is
+  NP-complete (time bound in unary), NEXP-complete (binary) and RE-complete (no bound).
 * O. Bournez, J. Cohen, L. Cohen, A. Wurm. *Fractal Gadgets for Neural Networks: The Complexity of the Narrow Regime.*
-  NeurIPS 2026, [arXiv:2610.06092](https://arxiv.org/abs/2610.06092), poster page: TODO. Verification of such networks is NP-complete at width 4.
+  FST/TCS 2026, [arXiv:2610.06092](https://arxiv.org/abs/2610.06092). Companion paper: verification is NP-complete
+  at width 4 on $[0,1]$ and at width 3 on the encoding set. Its Lemma 3.1 is the compilation discipline used here.
 * J. Bates. *A PyTorch Library of Turing-Complete Neural Networks*, 2026,
   [arXiv:2605.08150](https://arxiv.org/abs/2605.08150), [code](https://github.com/jonrbates/turing).
   Implements Siegelmann–Sontag RNNs and a Wei–Chen–Ma transformer in float arithmetic. `relu-tm` differs in using a
@@ -221,8 +262,9 @@ floating point ([docs/numerics.md](docs/numerics.md), `relu-tm precision ...`):
 ## Acknowledgement
 
 Developed with Claude Code as a coding assistant. The construction follows
-Bournez, Cohen & Wurm (MFCS 2025) and the gadget discipline of the NeurIPS
-2026 paper.
+Bournez, Cohen & Wurm (MFCS 2025, Thm 23) and the compilation discipline of
+the FST/TCS 2026 companion paper, and implements the simulation part of
+Theorem 3 of the NeurIPS 2026 paper.
 
 ## License
 
